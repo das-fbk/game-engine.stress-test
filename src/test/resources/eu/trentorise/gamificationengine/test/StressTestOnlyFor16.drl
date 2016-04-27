@@ -1,0 +1,17 @@
+package eu.trentorise.game.model
+ 
+ 
+rule "PlayerCustomData"
+    when
+       Action($id : id == "stress_test")
+       $p : Player($playerId : id == "16")
+    $c: CustomData($keys : this.keySet() != null)
+    then
+        log("CUSTOM DATA of Player " + $playerId + " : ");
+  		String k = "0";
+  		{
+   			Object o = $c.get(k);
+   			log("\t" + k + " - " + $c.get(k));
+  		}
+  		log("----------\n");
+end
