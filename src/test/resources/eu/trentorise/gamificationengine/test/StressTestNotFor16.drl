@@ -8,7 +8,7 @@ rule "PlayerCustomData"
     $c: CustomData($keys : this.keySet() != null)
     then
         log("CUSTOM DATA of Player " + $playerId + " : ");
-  		String k = "0";
+  		for (Object k: $keys) 
   		{
    			Object o = $c.get(k);
    			log("\t" + k + " - " + $c.get(k));
